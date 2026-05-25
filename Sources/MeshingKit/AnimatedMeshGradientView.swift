@@ -49,6 +49,7 @@ private enum AnimationConstants {
 }
 
 /// A view that displays an animated mesh gradient.
+@available(iOS 18.0, macOS 15.0, *)
 public struct AnimatedMeshGradientView: View {
     /// The size of the gradient grid (e.g., 3 for a 3x3 grid).
     var gridSize: Int

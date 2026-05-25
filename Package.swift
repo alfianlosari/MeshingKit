@@ -6,12 +6,9 @@ import PackageDescription
 let package = Package(
   name: "MeshingKit",
   platforms: [
-    .iOS(.v18),
-    .macOS(.v15),
-    .macCatalyst(.v18),
-    .tvOS(.v18),
-    .watchOS(.v11),
-    .visionOS(.v2)
+    .iOS(.v17),
+    .macOS(.v14),
+    .macCatalyst(.v17)
   ],
   products: [
     .library(
@@ -22,9 +19,6 @@ let package = Package(
   targets: [
     .target(
       name: "MeshingKit",
-      resources: [
-        .process("ParameterizedNoise.metal")
-      ]
     ),
     .testTarget(
       name: "MeshingKitTests",
