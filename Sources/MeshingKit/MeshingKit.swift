@@ -143,4 +143,43 @@ public struct MeshingKit: Sendable {
         )
     }
 
+    /// Creates an animated `MeshGradient` view from a predefined template.
+    ///
+    /// - Parameters:
+    ///   - template: A predefined template to use.
+    ///   - showAnimation: A binding to control the animation's play/pause state.
+    ///   - animationSpeed: Controls the speed of the animation (default: 1.0).
+    ///   - animationPattern: Optional custom animation pattern to apply.
+    ///   - smoothsColors: Whether the gradient should smooth between colors (default: `true`).
+    /// - Returns: A view containing the animated `MeshGradient`.
+    ///
+    /// Example:
+    /// ```swift
+    /// struct ContentView: View {
+    ///     @State private var showAnimation = true
+    ///
+    ///     var body: some View {
+    ///         MeshingKit.animatedGradient(
+    ///             .size3(.intelligence),
+    ///             showAnimation: $showAnimation,
+    ///             animationSpeed: 1.5
+    ///         )
+    ///     }
+    /// }
+    /// ```
+    @MainActor public static func animatedGradient(
+        _ template: PredefinedTemplate,
+        showAnimation: Binding<Bool>,
+        animationSpeed: Double = 1.0,
+        animationPattern: AnimationPattern? = nil,
+        smoothsColors: Bool = true
+    ) -> some View {
+        animatedGradient(
+            template.baseTemplate,
+            showAnimation: showAnimation,
+            animationSpeed: animationSpeed,
+            animationPattern: animationPattern,
+            smoothsColors: smoothsColors
+        )
+    }
 }
