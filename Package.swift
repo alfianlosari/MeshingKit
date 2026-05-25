@@ -19,10 +19,6 @@ let package = Package(
   targets: [
     .target(
       name: "MeshingKit",
-    ),
-    .testTarget(
-      name: "MeshingKitTests",
-      dependencies: ["MeshingKit"]
     )
   ]
 )
